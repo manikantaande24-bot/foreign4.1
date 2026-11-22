@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="en" class="intro-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olivia & Ethan - Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+/* =================================
+   GLOBAL SETTINGS
+================================= */
+
+:root {
+    --reveal-y: 0px;
+    --reveal-softness: 85px;
+    --maroon: #801b38;
+    --deep-maroon: #671329;
+    --soft-maroon: #a34b61;
+    --gold: #ae8755;
+    --cream: #fbf9f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #f8efe0;
+    overflow-x: hidden;
+}
+
+/* =================================
+   LOCK SCROLL BEFORE STARTING
+================================= */
+
+html.intro-locked {
+    height: 100%;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+html.intro-locked body {
+    height: 100%;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+/* =================================
+   SHARED SECTION SETTINGS
+================================= */
+
+.hero,
+.couple-section,
+.parents-section,
+.fourth-section,
+.fifth-section {
+    position: relative;
+    width: min(100%, 56.25vh);
+    height: 100vh;
+    height: 100svh;
+    margin: 0 auto;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* =================================
+   FIRST SECTION - HERO
+================================= */
+
+.hero {
+    background-image: url("Assets/roadbg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+
+/* =================================
+   INVITATION REVEAL LAYER
+================================= */
+
+.invitation {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    visibility: hidden;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0,
+        #000 calc(var(--reveal-y) - var(--reveal-softness)),
+        rgba(0,0,0,.85) var(--reveal-y),
+        transparent calc(var(--reveal-y) + var(--reveal-softness)),
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0,
+        #000 calc(var(--reveal-y) - var(--reveal-softness)),
+        rgba(0,0,0,.85) var(--reveal-y),
+        transparent calc(var(--reveal-y) + var(--reveal-softness)),
+        transparent 100%
+    );
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.hero.is-started .invitation {
+    visibility: visible;
+}
+
+/* =================================
+   INVITATION CONTENT
+================================= */
+
+.invitation-content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    padding: clamp(14px, 3svh, 30px) 12px;
+}
+
+/* =================================
+   FIRST SECTION HEADING
+================================= */
+
+.invitation-heading {
+    width: 100%;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 1.15;
+    color: #8e1538;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: clamp(10px, 2svh, 18px);
+}
+
+.invitation-heading span {
+    display: block;
+}
+
+/* =================================
+   FIRST SECTION SUBTITLE
+================================= */
+
+.invitation-subtitle {
+    width: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 3.3vw, 15px);
+    font-weight: 600;
+    letter-spacing: clamp(2px, .8vw, 4px);
+    color: #9d7429;
+    text-align: center;
+    margin-bottom: clamp(14px, 2.5svh, 25px);
+}
+
+/* =================================
+   DECORATIVE COUPLE FRAME
+================================= */
+
+.couple-monogram {
+    position: relative;
+    width: min(64vw, 250px, calc(100% - 48px));
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    container-type: inline-size;
+    container-name: monogram;
+}
+
+/* =================================
+   CIRCLE ORNAMENT
+================================= */
+
+.monogram-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* =================================
+   INITIALS CONTAINER
+================================= */
+
+.monogram-initials {
+    position: relative;
+    z-index: 1;
+    width: 78%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    white-space: nowrap;
+    gap: 0.8cqw;
+    transform: translateY(-1%);
+}
+
+/* =================================
+   INITIAL LETTERS
+================================= */
+
+.monogram-letter {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(38px, 23cqw, 58px);
+    font-weight: 400;
+    line-height: 1;
+    color: #8e1538;
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+/* =================================
+   AMPERSAND
+================================= */
+
+.monogram-symbol {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(28px, 15cqw, 38px);
+    font-weight: 400;
+    line-height: 1;
+    color: #bd8c36;
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-top: 1.5cqw;
+}
+
+/* =================================
+   FIRST SECTION FOOTER
+================================= */
+
+.invitation-footer {
+    width: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 3vw, 13px);
+    letter-spacing: clamp(1.5px, .65vw, 3px);
+    font-weight: 600;
+    color: #9d7429;
+    text-align: center;
+    margin-top: clamp(14px, 2.5svh, 25px);
+}
+
+/* =================================
+   WEDDING CAR
+================================= */
+
+.car-container {
+    position: absolute;
+    top: clamp(-135px, -14vh, -85px);
+    left: 50%;
+    width: clamp(190px, 57vw, 286px);
+    z-index: 3;
+
+    transform: translate3d(-50%, 0, 0);
+
+    pointer-events: none;
+    will-change: transform, opacity;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .55s ease,
+        visibility 0s;
+}
+
+.car-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    filter: drop-shadow(
+        0 12px 12px rgba(65, 25, 20, .13)
+    );
+}
+
+/* =================================
+   REMOVE CAR AFTER EXITING
+================================= */
+
+.car-container.is-exited {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .55s ease,
+        visibility 0s linear .55s;
+}
+
+/* =================================
+   PREMIUM START BUTTON
+================================= */
+
+.start-button {
+    position: absolute;
+    left: 50%;
+    bottom: max(34px, 6.5vh);
+    transform: translateX(-50%);
+    z-index: 5;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 39px;
+    max-width: calc(100% - 32px);
+    padding: 9px 20px 10px;
+
+    border: 1px solid rgba(222, 185, 112, .82);
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        #941d3b 0%,
+        #79142f 52%,
+        #641026 100%
+    );
+
+    color: #fffaf0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 13px rgba(69, 12, 29, .22),
+        0 1px 3px rgba(69, 12, 29, .16),
+        inset 0 1px 0 rgba(255,255,255,.24),
+        inset 0 -1px 0 rgba(0,0,0,.12);
+
+    transition:
+        opacity .65s ease,
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.start-button::after {
+    content: "›";
+    display: inline-block;
+    color: #e8c783;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: .7;
+    margin-top: -1px;
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+.start-button:hover {
+    transform: translate(-50%, -2px);
+    border-color: #f0d49a;
+
+    box-shadow:
+        0 7px 17px rgba(69, 12, 29, .27),
+        0 0 0 3px rgba(189, 140, 54, .08),
+        inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.start-button:hover::after {
+    color: #fff0c9;
+    transform: translateX(3px);
+}
+
+.start-button:active {
+    transform: translate(-50%, 0) scale(.97);
+
+    box-shadow:
+        0 2px 7px rgba(69, 12, 29, .2),
+        inset 0 1px 3px rgba(0,0,0,.12);
+}
+
+.start-button:disabled {
+    cursor: default;
+}
+
+.hero.is-started .start-button {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 12px);
+}
+
+/* =================================
+   SCROLL DOWN INDICATOR
+================================= */
+
+.scroll-down-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(16px, 3vh, 28px);
+    transform: translateX(-50%);
+    z-index: 6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    border: none;
+    background: transparent;
+    color: #9d7429;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .7s ease,
+        visibility 0s linear .7s;
+}
+
+.hero.is-scroll-unlocked .scroll-down-indicator {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        opacity .7s ease,
+        visibility 0s;
+}
+
+.scroll-down-arrow {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+    animation: scrollArrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollArrowMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+.scroll-down-indicator:hover {
+    color: #891630;
+}
+
+.scroll-down-indicator:focus-visible {
+    outline: 2px solid #bd8c36;
+    outline-offset: 6px;
+    border-radius: 5px;
+}
+
+/* =================================
+   SECOND SECTION - COUPLE INTRO
+================================= */
+
+.couple-section {
+    background-color: #ffffff;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(2, 15, 54, .30) 0%,
+            rgba(2, 15, 54, .10) 24%,
+            transparent 48%
+        ),
+        url("Assets/couplenameimg.png");
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    background-size:
+        100% 100%,
+        auto 100%;
+}
+
+/* =================================
+   SECOND SECTION TEXT AREA
+================================= */
+
+.couple-section-content {
+    position: absolute;
+    top: clamp(30px, 5.5svh, 65px);
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    padding: 0 clamp(12px, 4vw, 22px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    z-index: 2;
+}
+
+/* =================================
+   SECOND SECTION OVERLINE
+================================= */
+
+.couple-overline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 2.8vw, 13px);
+    font-weight: 600;
+    letter-spacing: clamp(2px, .8vw, 4px);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* =================================
+   SHINING WHITE TEXT
+================================= */
+
+.shine-text {
+    color: #ffffff;
+
+    background: linear-gradient(
+        110deg,
+        #ffffff 0%,
+        #d8e8ff 18%,
+        #ffffff 32%,
+        #a9caff 45%,
+        #ffffff 56%,
+        #e8f2ff 72%,
+        #ffffff 100%
+    );
+
+    background-size: 250% 100%;
+    background-position: 100% center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(
+        0 0 5px rgba(255,255,255,.55)
+    );
+
+    animation: whiteShimmer 5s ease-in-out infinite;
+}
+
+/* =================================
+   SECOND SECTION COUPLE NAMES
+================================= */
+
+.couple-section-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(40px, 11vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+/* =================================
+   SECOND SECTION TAGLINE
+================================= */
+
+.couple-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 2.8vw, 14px);
+    font-weight: 600;
+    letter-spacing: clamp(1.5px, .6vw, 3px);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* =================================
+   SHIMMER ANIMATION
+================================= */
+
+@keyframes whiteShimmer {
+    0% {
+        background-position: 100% center;
+    }
+
+    50% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: -100% center;
+    }
+}
+
+/* =================================
+   THIRD SECTION - PARENTS
+   (Compact height — content driven)
+================================= */
+
+.parents-section {
+    height: auto;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--deep-maroon);
+}
+
+/* =================================
+   PARENTS CONTENT
+================================= */
+
+.parents-section-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        clamp(35px, 6svh, 60px)
+        clamp(20px, 5vw, 30px);
+
+    gap: 0;
+}
+
+/* =================================
+   PARENTS OVERLINE
+================================= */
+
+.parents-overline {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(10px, 2.9vw, 13px);
+    font-weight: 600;
+
+    letter-spacing: clamp(2px, .85vw, 4px);
+
+    text-transform: uppercase;
+
+    color: var(--soft-maroon);
+
+    margin-bottom: clamp(15px, 2.6svh, 22px);
+}
+
+/* =================================
+   PARENTS INTRODUCTION
+================================= */
+
+.parents-intro {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(16px, 4.5vw, 19px);
+    font-weight: 500;
+
+    line-height: 1.45;
+
+    color: #68545a;
+
+    margin-bottom: clamp(10px, 2svh, 17px);
+}
+
+/* =================================
+   GROOM AND BRIDE NAMES
+================================= */
+
+.parents-couple-name {
+    width: 100%;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(43px, 12vw, 61px);
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: var(--maroon);
+
+    text-align: center;
+
+    margin: 0;
+}
+
+/* =================================
+   PARENTS DETAILS
+================================= */
+
+.parents-details {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(13px, 3.7vw, 16px);
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    color: #76656a;
+
+    text-align: center;
+
+    margin-top: clamp(4px, 1svh, 8px);
+}
+
+.parents-details span {
+    display: block;
+}
+
+/* =================================
+   WITH TEXT
+================================= */
+
+.parents-with {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(24px, 6.5vw, 31px);
+
+    color: var(--soft-maroon);
+
+    line-height: 1.2;
+
+    margin:
+        clamp(11px, 2svh, 17px)
+        0;
+}
+
+/* =================================
+   DECORATIVE DIVIDER
+================================= */
+
+.parents-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(120px, 32%);
+
+    margin: 0 auto clamp(13px, 2.5svh, 20px);
+
+    gap: 9px;
+}
+
+.parents-divider::before,
+.parents-divider::after {
+    content: "";
+
+    height: 1px;
+    flex: 1;
+
+    background: rgba(128, 27, 56, .35);
+}
+
+.parents-divider span {
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    background: var(--gold);
+
+    transform: rotate(45deg);
+}
+
+/* =================================
+   FOURTH SECTION - SAVE THE DATE
+   (Maroon & gold ribbon theme)
+   Compact height — content driven
+   No horizontal padding so ribbon
+   stretches to the screen edges.
+================================= */
+
+.fourth-section {
+    height: auto;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Zero horizontal padding to let the ribbon go edge-to-edge */
+    padding:
+        clamp(35px, 6svh, 60px)
+        0;
+}
+
+.save-date {
+    --sd-maroon: #801b38;
+    --sd-maroon-soft: #a34b61;
+    --sd-muted: #7d6168;
+    --sd-line: #e6d2d8;
+    --sd-gold: #ae8755;
+
+    /* Full width of the section */
+    width: 100%;
+    text-align: center;
+    color: var(--sd-maroon);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    container-type: inline-size;
+    container-name: savedate;
+}
+
+.sd-title {
+    font-family: 'Pinyon Script', 'Snell Roundhand', cursive;
+    font-weight: 400;
+    font-size: clamp(38px, 13cqw, 58px);
+    line-height: 1.1;
+    margin: 0 0 4px;
+    color: var(--sd-maroon);
+    padding: 0 16px;
+}
+
+.sd-panel {
+    position: relative;
+    width: 100%;
+    min-height: max(280px, calc(75cqw + 50px));
+}
+
+/* ---------- ribbon stage ---------- */
+
+.sd-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.sd-stage:focus-visible {
+    outline: 2px solid var(--sd-maroon-soft);
+    outline-offset: 8px;
+    border-radius: 8px;
+}
+
+.sd-band {
+    position: absolute;
+    top: 50.33%;
+    height: 6%;
+    width: 56.5%;
+    background: linear-gradient(180deg,#3d0a1a 0%,#5c1129 16%,#8e2445 38%,#a34b61 48%,#7a1d3a 60%,#5a1028 84%,#3a0917 100%);
+    box-shadow: 0 7px 9px -2px rgba(74,13,30,.32), 0 1px 2px rgba(74,13,30,.45);
+    overflow: hidden;
+}
+
+.sd-band.l { right: 50%; }
+.sd-band.r { left: 50%; }
+
+.sd-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px);
+}
+
+.sd-band::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55) 50%, transparent) no-repeat;
+    background-size: 30% 100%;
+    animation: sdSheen 6s ease-in-out infinite;
+}
+
+.sd-band.r::after { animation-delay: .4s; }
+
+@keyframes sdSheen {
+    0% { background-position: -120% 0; }
+    55%, 100% { background-position: 260% 0; }
+}
+
+.sd-bow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.sd-hl {
+    animation: sdTw 4.5s ease-in-out infinite;
+}
+
+@keyframes sdTw {
+    0%, 100% { opacity: .55; }
+    50% { opacity: 1; }
+}
+
+.sd-tailL,
+.sd-tailR,
+.sd-loopL,
+.sd-loopR,
+.sd-knot {
+    transform-box: view-box;
+}
+
+.sd-tailL {
+    transform-origin: 196px 172px;
+    animation: sdSwayL 5.5s ease-in-out infinite;
+}
+
+.sd-tailR {
+    transform-origin: 204px 172px;
+    animation: sdSwayR 6.3s ease-in-out infinite;
+}
+
+@keyframes sdSwayL {
+    0%, 100% { transform: rotate(-.9deg); }
+    50% { transform: rotate(1.3deg); }
+}
+
+@keyframes sdSwayR {
+    0%, 100% { transform: rotate(1deg); }
+    50% { transform: rotate(-1.2deg); }
+}
+
+.sd-knot,
+.sd-loopL,
+.sd-loopR {
+    transform-origin: 200px 162px;
+}
+
+.sd-hint {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(75cqw + 4px);
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--sd-maroon-soft);
+    animation: sdPulse 2.6s ease-in-out infinite;
+    padding: 0 16px;
+}
+
+@keyframes sdPulse {
+    0%, 100% { opacity: .6; }
+    50% { opacity: 1; }
+}
+
+/* ---------- untie sequence ---------- */
+
+.sd-panel.open .sd-stage { pointer-events: none; }
+
+.sd-panel.open .sd-hint {
+    animation: none;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.sd-panel.open .sd-knot {
+    animation: sdKnotOut 1s cubic-bezier(.5,0,.4,1) forwards;
+}
+
+.sd-panel.open .sd-loopL,
+.sd-panel.open .sd-loopR {
+    animation: sdLoopOut 1s .3s cubic-bezier(.55,0,.4,1) forwards;
+}
+
+.sd-panel.open .sd-tailL {
+    animation: sdTailL 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+.sd-panel.open .sd-tailR {
+    animation: sdTailR 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+.sd-panel.open .sd-band.l {
+    animation: sdBandL 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+.sd-panel.open .sd-band.r {
+    animation: sdBandR 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+@keyframes sdKnotOut {
+    0% { transform: scale(1); }
+    18% { transform: scale(1.1, .92) rotate(-5deg); }
+    42% { transform: scale(.9) rotate(4deg); }
+    100% { transform: scale(.05); opacity: 0; }
+}
+
+@keyframes sdLoopOut {
+    0% { transform: scale(1); }
+    22% { transform: scale(1.08, 1.12); }
+    100% { transform: scale(.04, .22); opacity: 0; }
+}
+
+@keyframes sdTailL {
+    0% { transform: rotate(0); }
+    18% { transform: translate(0, -4px) rotate(5deg); }
+    100% { transform: translate(calc(var(--outU) * -1), 12px) rotate(-5deg); }
+}
+
+@keyframes sdTailR {
+    0% { transform: rotate(0); }
+    18% { transform: translate(0, -4px) rotate(-5deg); }
+    100% { transform: translate(var(--outU), 12px) rotate(5deg); }
+}
+
+@keyframes sdBandL {
+    0% { transform: none; }
+    18% { transform: translateX(3px); }
+    100% { transform: translateX(calc(var(--outPx) * -1)); }
+}
+
+@keyframes sdBandR {
+    0% { transform: none; }
+    18% { transform: translateX(-3px); }
+    100% { transform: translateX(var(--outPx)); }
+}
+
+/* ---------- date details ---------- */
+
+.sd-details {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    padding: 0 16px;
+}
+
+.sd-details > * {
+    opacity: 0;
+}
+
+.sd-panel.open .sd-details > * {
+    animation: sdRise .9s cubic-bezier(.2,.7,.2,1) forwards;
+    animation-delay: calc(1.55s + var(--i) * .13s);
+}
+
+@keyframes sdRise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+.sd-small {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--sd-maroon-soft);
+}
+
+.sd-dow {
+    margin-top: 14px;
+}
+
+.sd-dateRow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    margin-top: 14px;
+    gap: 6px;
+}
+
+.sd-side {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--sd-line);
+    border-bottom: 1px solid var(--sd-line);
+}
+
+.sd-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(40px, 20cqw, 84px);
+    line-height: 1;
+    color: var(--sd-maroon);
+    padding: 0 10px;
+}
+
+.sd-time {
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(16px, 4.5cqw, 20px);
+    color: var(--sd-muted);
+}
+
+.sd-togo {
+    margin-top: clamp(20px, 8cqw, 42px);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(15px, 4.3cqw, 19px);
+    color: var(--sd-gold);
+}
+
+.sd-count {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    margin-top: 14px;
+}
+
+.sd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.sd-unit + .sd-unit {
+    border-left: 1px solid #e6d2d8;
+}
+
+.sd-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(22px, 8.5cqw, 38px);
+    line-height: 1.1;
+    color: var(--sd-maroon);
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.sd-lab {
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #9c7c85;
+}
+
+/* =================================
+   FIFTH SECTION - EMPTY / RESERVED
+================================= */
+
+.fifth-section {
+    background: #ffffff;
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+.start-button:focus-visible {
+    outline: 3px solid #bd8c36;
+    outline-offset: 5px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
+/* =================================
+   SMALL MOBILE DEVICES
+================================= */
+
+@media (max-width: 350px) {
+
+    .invitation-content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .invitation-heading {
+        font-size: 40px;
+    }
+
+    .couple-monogram {
+        width: min(60vw, 210px, calc(100% - 36px));
+    }
+
+    .invitation-subtitle {
+        letter-spacing: 2px;
+    }
+
+    .couple-section-names {
+        font-size: clamp(36px, 11vw, 44px);
+    }
+
+    .start-button {
+        min-height: 37px;
+        padding: 9px 16px;
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        gap: 6px;
+    }
+
+    .scroll-down-indicator {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .parents-section-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .parents-couple-name {
+        font-size: clamp(39px, 12vw, 46px);
+    }
+
+    .parents-details {
+        font-size: 13px;
+    }
+
+    .parents-intro {
+        font-size: 15px;
+    }
+}
+
+/* =================================
+   SHORT MOBILE SCREENS
+================================= */
+
+@media (max-height: 580px) and (max-width: 900px) {
+
+    .invitation-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .invitation-heading {
+        font-size: clamp(34px, 8vw, 44px);
+        margin-bottom: 8px;
+    }
+
+    .invitation-subtitle {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .couple-monogram {
+        width: min(56vw, 210px, calc(100% - 36px));
+    }
+
+    .invitation-footer {
+        font-size: 10px;
+        margin-top: 12px;
+    }
+
+    .couple-section-content {
+        top: 22px;
+    }
+
+    .couple-section-names {
+        font-size: clamp(34px, 8vw, 42px);
+    }
+
+    .couple-tagline {
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    .scroll-down-indicator {
+        bottom: 10px;
+    }
+
+    .parents-section-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .parents-overline {
+        margin-bottom: 9px;
+        font-size: 10px;
+    }
+
+    .parents-intro {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .parents-couple-name {
+        font-size: clamp(35px, 9vw, 45px);
+    }
+
+    .parents-details {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+
+    .parents-with {
+        font-size: 22px;
+        margin: 7px 0;
+    }
+
+    .sd-title {
+        font-size: clamp(32px, 11cqw, 46px);
+    }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .start-button,
+    .scroll-down-indicator {
+        transition-duration: .15s;
+    }
+
+    .scroll-down-arrow {
+        animation: none;
+    }
+
+    .shine-text {
+        animation: none;
+        background-position: center;
+    }
+
+    .sd-tailL,
+    .sd-tailR,
+    .sd-hl,
+    .sd-hint,
+    .sd-band::after {
+        animation: none;
+    }
+}
+
+/* =================================
+   DESKTOP BACKGROUND
+================================= */
+
+@media (min-width: 700px) {
+
+    body {
+        background: #eae3d9;
+    }
+}
+
+/* =================================
+   REMOVE BLUE HIGHLIGHT THROUGHOUT WEBSITE
+================================= */
+
+/* Remove blue tap highlight on mobile */
+*,
+*::before,
+*::after {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Remove unwanted browser focus outline on tap */
+*:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+/* Remove default blue outlines from interactive elements */
+button,
+a,
+input,
+textarea,
+select,
+[role="button"],
+[tabindex] {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Preserve clean keyboard accessibility */
+*:focus-visible {
+    outline-color: #ae8755;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =================================
+     SECTION 1 - WEDDING INVITATION
+================================= -->
+
+<section class="hero" id="hero">
+
+    <div class="invitation" id="invitation">
+
+        <div class="invitation-content">
+
+            <h1 class="invitation-heading">
+                <span>You are</span>
+                <span>invited</span>
+            </h1>
+
+            <p class="invitation-subtitle">
+                TO THE WEDDING OF
+            </p>
+
+            <!-- COUPLE INITIALS -->
+
+            <div class="couple-monogram">
+
+                <img
+                    class="monogram-frame"
+                    src="Assets/circleshape.png"
+                    alt=""
+                    aria-hidden="true"
+                    draggable="false"
+                >
+
+                <div
+                    class="monogram-initials"
+                    aria-label="Olivia and Ethan"
+                >
+
+                    <span class="monogram-letter">O</span>
+
+                    <span class="monogram-symbol">&</span>
+
+                    <span class="monogram-letter">E</span>
+
+                </div>
+
+            </div>
+
+            <p class="invitation-footer">
+                WITH THEIR FAMILIES
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- WEDDING CAR -->
+
+    <div class="car-container" id="carContainer">
+
+        <img
+            id="carImage"
+            src="Assets/carimg.png"
+            alt="Wedding couple in a vintage car"
+            draggable="false"
+            fetchpriority="high"
+        >
+
+    </div>
+
+    <!-- PREMIUM START BUTTON -->
+
+    <button
+        class="start-button"
+        id="startButton"
+        type="button"
+        aria-pressed="false"
+    >
+        TAP TO START THE CAR
+    </button>
+
+    <!-- SCROLL DOWN INDICATOR -->
+
+    <button
+        class="scroll-down-indicator"
+        id="scrollDownButton"
+        type="button"
+        aria-label="Scroll down to see the couple section"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+
+        <span>SCROLL DOWN</span>
+
+        <span class="scroll-down-arrow" aria-hidden="true">
+            ↓
+        </span>
+
+    </button>
+
+    <span
+        id="animationStatus"
+        class="sr-only"
+        aria-live="polite">
+    </span>
+
+</section>
+
+<!-- =================================
+     SECTION 2 - COUPLE INTRODUCTION
+================================= -->
+
+<section class="couple-section" id="couple">
+
+    <div class="couple-section-content">
+
+        <p class="couple-overline shine-text">
+            A CELEBRATION OF LOVE
+        </p>
+
+        <h2 class="couple-section-names shine-text">
+            Olivia &amp; Ethan
+        </h2>
+
+        <p class="couple-tagline shine-text">
+            Two Hearts, One Beautiful Journey
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 3 - PARENTS & FAMILY
+================================= -->
+
+<section class="parents-section" id="parents">
+
+    <div class="parents-section-content">
+
+        <!-- TOP HEADING -->
+
+        <p class="parents-overline">
+            TOGETHER WITH THEIR FAMILIES
+        </p>
+
+        <!-- INVITATION MESSAGE -->
+
+        <p class="parents-intro">
+            request the honour of your presence
+            <br>
+            at the marriage of
+        </p>
+
+        <!-- GROOM NAME -->
+
+        <h2 class="parents-couple-name">
+            Ethan
+        </h2>
+
+        <!-- GROOM PARENTS -->
+
+        <p class="parents-details">
+            son of Mr. [Groom's Father's Name] &
+            <span>Mrs. [Groom's Mother's Name]</span>
+        </p>
+
+        <!-- WITH -->
+
+        <p class="parents-with">
+            with
+        </p>
+
+        <!-- BRIDE NAME -->
+
+        <h2 class="parents-couple-name">
+            Olivia
+        </h2>
+
+        <!-- BRIDE PARENTS -->
+
+        <p class="parents-details">
+            daughter of Mr. [Bride's Father's Name] &
+            <span>Mrs. [Bride's Mother's Name]</span>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 4 - SAVE THE DATE
+     Maroon ribbon theme — tap to untie
+     Full-width ribbon, compact height
+================================= -->
+
+<section class="fourth-section" id="fourth">
+
+    <div class="save-date">
+
+        <h2 class="sd-title">Save the date</h2>
+
+        <div class="sd-panel" id="sdPanel">
+
+            <div
+                class="sd-stage"
+                id="sdStage"
+                role="button"
+                tabindex="0"
+                aria-label="Tap to untie the bow"
+            >
+
+                <div class="sd-band l"></div>
+                <div class="sd-band r"></div>
+
+                <svg
+                    class="sd-bow"
+                    viewBox="0 0 400 300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+
+                    <defs>
+
+                        <linearGradient id="sdGLoop" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#4a0d1e"/>
+                            <stop offset=".3" stop-color="#7a1d3a"/>
+                            <stop offset=".52" stop-color="#a34b61"/>
+                            <stop offset=".75" stop-color="#6b1230"/>
+                            <stop offset="1" stop-color="#3a0917"/>
+                        </linearGradient>
+
+                        <linearGradient id="sdGInner" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#4a0d1e"/>
+                            <stop offset=".55" stop-color="#7a1d3a"/>
+                            <stop offset="1" stop-color="#5c1129"/>
+                        </linearGradient>
+
+                        <linearGradient id="sdGTail" x1="0" y1="0" x2="1" y2=".3">
+                            <stop offset="0" stop-color="#3d0a1a"/>
+                            <stop offset=".35" stop-color="#741834"/>
+                            <stop offset=".5" stop-color="#a34b61"/>
+                            <stop offset=".75" stop-color="#6b1230"/>
+                            <stop offset="1" stop-color="#3a0917"/>
+                        </linearGradient>
+
+                        <linearGradient id="sdGKnot" x1=".2" y1="0" x2=".8" y2="1">
+                            <stop offset="0" stop-color="#c97a8e"/>
+                            <stop offset=".4" stop-color="#8e2445"/>
+                            <stop offset="1" stop-color="#5a1028"/>
+                        </linearGradient>
+
+                        <filter id="sdBlur" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="1.3"/>
+                        </filter>
+
+                        <filter id="sdDS" x="-30%" y="-30%" width="160%" height="170%">
+                            <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#4a0d1e" flood-opacity=".4"/>
+                        </filter>
+
+                        <g id="sdLoop">
+
+                            <path d="M192,158 C170,126 126,102 90,116 C62,128 58,162 80,180 C104,200 154,192 192,167 Z" fill="url(#sdGLoop)"/>
+
+                            <path d="M192,161 C168,140 130,126 98,134 C84,150 90,168 110,177 C142,187 174,174 192,165 Z" fill="url(#sdGInner)"/>
+
+                            <path d="M192,160 C160,152 126,152 96,166" stroke="#3d0a1a" stroke-opacity=".4" stroke-width="2" fill="none"/>
+
+                            <path class="sd-hl" d="M186,150 C160,126 124,111 92,122" stroke="#fff" stroke-opacity=".55" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+
+                            <path class="sd-hl" d="M178,170 C150,184 118,187 96,175" stroke="#e8c0cc" stroke-opacity=".45" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+
+                        </g>
+
+                    </defs>
+
+                    <g filter="url(#sdDS)">
+
+                        <g class="sd-loopL"><use href="#sdLoop"/></g>
+
+                        <g class="sd-loopR"><use href="#sdLoop" transform="translate(400,0) scale(-1,1)"/></g>
+
+                        <g class="sd-tailL">
+                            <path d="M194,172 C178,205 155,238 138,274 L160,262 L174,280 C190,248 204,218 212,182 Z" fill="url(#sdGTail)"/>
+                            <path class="sd-hl" d="M192,178 C178,208 162,238 150,262" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+                        </g>
+
+                        <g class="sd-tailR">
+                            <path d="M206,172 C222,205 245,238 262,274 L240,262 L226,280 C210,248 196,218 188,182 Z" fill="url(#sdGTail)"/>
+                            <path class="sd-hl" d="M210,180 C224,208 240,236 252,258" stroke="#fff" stroke-opacity=".3" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+                        </g>
+
+                        <g class="sd-knot">
+                            <path d="M183,150 C190,142 210,142 217,150 C222,160 222,170 217,178 C209,185 191,185 183,178 C178,170 178,160 183,150Z" fill="url(#sdGKnot)"/>
+                            <path d="M200,145 L200,183" stroke="#4a0d1e" stroke-opacity=".28" stroke-width="1.5"/>
+                            <path class="sd-hl" d="M186,153 C195,147 205,147 214,153" stroke="#fff" stroke-opacity=".6" stroke-width="2.6" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+                            <path d="M188,177 C196,182 206,182 213,177" stroke="#3a0917" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </g>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+            <p class="sd-hint">Tap to untie the bow</p>
+
+            <div class="sd-details">
+
+                <div class="sd-small sd-dow" style="--i:0">Saturday</div>
+
+                <div class="sd-dateRow" style="--i:1">
+                    <div class="sd-side sd-small">January</div>
+                    <div class="sd-day">16</div>
+                    <div class="sd-side sd-small">2027</div>
+                </div>
+
+                <div class="sd-time" style="--i:2">4:00 PM</div>
+
+                <div class="sd-togo" style="--i:3">Days to go</div>
+
+                <div class="sd-count" style="--i:4">
+                    <div class="sd-unit"><span class="sd-num" id="sdD">0</span><span class="sd-lab">Days</span></div>
+                    <div class="sd-unit"><span class="sd-num" id="sdH">0</span><span class="sd-lab">Hours</span></div>
+                    <div class="sd-unit"><span class="sd-num" id="sdM">0</span><span class="sd-lab">Minutes</span></div>
+                    <div class="sd-unit"><span class="sd-num" id="sdS">0</span><span class="sd-lab">Seconds</span></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 5 - EMPTY / RESERVED
+     (Ready for future content)
+================================= -->
+
+<section class="fifth-section" id="fifth">
+</section>
+
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =================================
+       ELEMENTS
+    ================================= */
+
+    const root = document.documentElement;
+
+    const hero = document.getElementById("hero");
+
+    const car = document.getElementById("carContainer");
+
+    const carImage = document.getElementById("carImage");
+
+    const button = document.getElementById("startButton");
+
+    const scrollButton = document.getElementById("scrollDownButton");
+
+    const coupleSection = document.getElementById("couple");
+
+    const status = document.getElementById("animationStatus");
+
+
+    /* =================================
+       STATE
+    ================================= */
+
+    let animationStarted = false;
+
+    let scrollUnlocked = false;
+
+    let animationFinished = false;
+
+
+    /* =================================
+       ANIMATION SETTINGS
+    ================================= */
+
+    const DURATION = 8500;
+
+    const REVEAL_OFFSET = 12;
+
+    const REVEAL_SOFTNESS = 85;
+
+    const CAR_FADE_DURATION = 550;
+
+    const EXIT_BUFFER = 40;
+
+
+    /* =================================
+       UNLOCK SCROLL
+    ================================= */
+
+    function unlockPageScroll() {
+
+        if (scrollUnlocked) {
+            return;
+        }
+
+        scrollUnlocked = true;
+
+        // Remove initial scroll lock.
+
+        root.classList.remove("intro-locked");
+
+        // Restore document scrolling.
+
+        root.style.height = "auto";
+
+        root.style.overflowX = "hidden";
+
+        root.style.overflowY = "auto";
+
+        document.body.style.height = "auto";
+
+        // Keep page at hero section.
+
+        window.scrollTo(0, 0);
+
+        // Show scroll indicator.
+
+        hero.classList.add("is-scroll-unlocked");
+
+        scrollButton.setAttribute("aria-hidden", "false");
+
+        scrollButton.removeAttribute("tabindex");
+
+        status.textContent =
+            "Invitation revealed. You can now scroll down to meet Olivia and Ethan.";
+
+    }
+
+
+    /* =================================
+       SMOOTH EASING
+    ================================= */
+
+    function smoothEase(progress) {
+
+        return 0.5 - Math.cos(progress * Math.PI) / 2;
+
+    }
+
+
+    /* =================================
+       FINISH CAR ANIMATION
+    ================================= */
+
+    function finishCarAnimation() {
+
+        if (animationFinished) {
+            return;
+        }
+
+        animationFinished = true;
+
+        const heroHeight = hero.clientHeight;
+
+        // Ensure complete invitation reveal.
+
+        hero.style.setProperty(
+            "--reveal-y",
+            (heroHeight + REVEAL_SOFTNESS + 20) + "px"
+        );
+
+        // Car has cleared the hero.
+
+        car.classList.add("is-exited");
+
+        // Remove car and unlock scrolling.
+
+        setTimeout(function () {
+
+            car.style.display = "none";
+
+            unlockPageScroll();
+
+        }, CAR_FADE_DURATION + 80);
+
+    }
+
+
+    /* =================================
+       CAR ANIMATION
+    ================================= */
+
+    function startCarAnimation() {
+
+        const heroHeight = hero.clientHeight;
+
+        const heroRect = hero.getBoundingClientRect();
+
+        const carRect = car.getBoundingClientRect();
+
+        // Actual starting position relative to hero.
+
+        const initialTop = carRect.top - heroRect.top;
+
+        // Move just beyond the hero boundary.
+
+        const targetTop =
+            heroHeight + REVEAL_SOFTNESS + EXIT_BUFFER;
+
+        const travelDistance = targetTop - initialTop;
+
+        const startTime = performance.now();
+
+
+        /* =================================
+           ANIMATION FRAME
+        ================================= */
+
+        function animateCar(currentTime) {
+
+            if (animationFinished) {
+                return;
+            }
+
+            const elapsed = currentTime - startTime;
+
+            const progress = Math.min(
+                elapsed / DURATION,
+                1
+            );
+
+            const easedProgress = smoothEase(progress);
+
+            const currentMove = travelDistance * easedProgress;
+
+            const currentCarTop = initialTop + currentMove;
+
+
+            /* MOVE CAR */
+
+            car.style.transform = `
+                translate3d(
+                    -50%,
+                    ${currentMove}px,
+                    0
+                )
+            `;
+
+
+            /* REVEAL INVITATION FOLLOWING CAR */
+
+            const revealPosition = Math.max(
+                0,
+                Math.min(
+                    heroHeight + REVEAL_SOFTNESS + 20,
+                    currentCarTop + REVEAL_OFFSET
+                )
+            );
+
+            hero.style.setProperty(
+                "--reveal-y",
+                revealPosition + "px"
+            );
+
+
+            /* CONTINUE ANIMATION */
+
+            if (progress < 1) {
+
+                requestAnimationFrame(animateCar);
+
+            }
+
+            else {
+
+                car.style.transform = `
+                    translate3d(
+                        -50%,
+                        ${travelDistance}px,
+                        0
+                    )
+                `;
+
+                finishCarAnimation();
+
+            }
+
+        }
+
+        requestAnimationFrame(animateCar);
+
+    }
+
+
+    /* =================================
+       START BUTTON CLICK
+    ================================= */
+
+    button.addEventListener("click", async function () {
+
+        if (animationStarted) {
+            return;
+        }
+
+        animationStarted = true;
+
+        button.disabled = true;
+
+        button.setAttribute("aria-pressed", "true");
+
+        status.textContent = "Wedding invitation opening.";
+
+        // Wait until car image is ready.
+
+        if (carImage.decode) {
+
+            try {
+
+                await carImage.decode();
+
+            }
+
+            catch (error) {
+
+                console.warn(
+                    "Car image decoding failed:",
+                    error
+                );
+
+            }
+
+        }
+
+        // Start invitation reveal.
+
+        hero.classList.add("is-started");
+
+        // Start car animation.
+
+        startCarAnimation();
+
+    });
+
+
+    /* =================================
+       SCROLL DOWN BUTTON
+    ================================= */
+
+    scrollButton.addEventListener("click", function () {
+
+        if (!scrollUnlocked) {
+            return;
+        }
+
+        coupleSection.scrollIntoView({
+
+            behavior: window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches ? "auto" : "smooth",
+
+            block: "start"
+
+        });
+
+    });
+
+
+    /* =================================
+       INITIAL SCROLL POSITION
+    ================================= */
+
+    window.scrollTo(0, 0);
+
+});
+
+</script>
+
+<!-- =================================
+     SAVE THE DATE - RIBBON & COUNTDOWN
+================================= -->
+
+<script>
+
+(function () {
+
+    var panel = document.getElementById("sdPanel");
+
+    var stage = document.getElementById("sdStage");
+
+    if (!panel || !stage) {
+        return;
+    }
+
+    /* =================================
+       SCALE THE UNTIE TRAVEL TO STAGE
+    ================================= */
+
+    function sizes() {
+
+        var w = stage.getBoundingClientRect().width;
+
+        if (!w) {
+            return;
+        }
+
+        var out = w * 0.7;
+
+        stage.style.setProperty("--outPx", out + "px");
+
+        stage.style.setProperty("--outU", (out * 400 / w) + "px");
+
+    }
+
+    /* =================================
+       UNTIE THE BOW
+    ================================= */
+
+    function untie() {
+
+        if (panel.classList.contains("open")) {
+            return;
+        }
+
+        sizes();
+
+        panel.classList.add("open");
+
+        setTimeout(function () {
+
+            stage.style.display = "none";
+
+        }, 2300);
+
+    }
+
+    stage.addEventListener("click", untie);
+
+    stage.addEventListener("keydown", function (e) {
+
+        if (e.key === "Enter" || e.key === " ") {
+
+            e.preventDefault();
+
+            untie();
+
+        }
+
+    });
+
+    window.addEventListener("resize", sizes);
+
+    sizes();
+
+    /* =================================
+       LIVE COUNTDOWN
+    ================================= */
+
+    var target = new Date(2027, 0, 16, 16, 0, 0).getTime();
+
+    var el = {
+        d: document.getElementById("sdD"),
+        h: document.getElementById("sdH"),
+        m: document.getElementById("sdM"),
+        s: document.getElementById("sdS")
+    };
+
+    if (el.d && el.h && el.m && el.s) {
+
+        function tick() {
+
+            var t = Math.max(
+                0,
+                Math.floor((target - Date.now()) / 1000)
+            );
+
+            el.d.textContent = Math.floor(t / 86400);
+
+            el.h.textContent = Math.floor(t % 86400 / 3600);
+
+            el.m.textContent = Math.floor(t % 3600 / 60);
+
+            el.s.textContent = t % 60;
+
+        }
+
+        tick();
+
+        setInterval(tick, 1000);
+
+    }
+
+})();
+
+</script>
+
+</body>
+</html>
